@@ -1,0 +1,14 @@
+@mixin position($position, $top, $right, $bottom, $left) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin bg-img($url, $positionX, $positionY, $size) {
+  background-image: url($url);
+  background-position-x: $positionX;
+  background-position-y: $positionY; 
+  background-size: $size;
+}

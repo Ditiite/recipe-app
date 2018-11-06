@@ -1,0 +1,38 @@
+.main-page__img-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    @include bg-img('../pictures/salads/salad.jpg', 50%, 50%, cover);
+}
+
+.main-page__img-container--sm {
+    @include position(absolute, 3rem, 3rem, 3rem, 3rem);
+    @include bg-img('../pictures/salads/salad.jpg', 50%, 50%, cover);
+    background: linear-gradient(-45deg,rgb(37, 37, 37),rgba(0, 0, 0, 0.3));
+    box-shadow: 0 0 55rem 0 gray;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.main-page__half-white {
+    @include position(absolute, 3rem, 3rem, 3rem, 50vw);
+    background-color: red;
+    z-index: 2;
+    border-radius:0 5px 5px 0;
+    opacity: 0.9;
+}
+
+.main-heading {
+    font-size: 3em;
+    z-index: 4;
+
+    @include position(absolute, 350px, 35%, null, null);
+    h1 {
+        color: #fff;
+    }
+    span { 
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        @include bg-img('../pictures/salads/salad.jpg', 50%, 50%, cover);   
+    }
+}

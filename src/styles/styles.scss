@@ -1,0 +1,47 @@
+@import './mixins/mixins';
+@import './variables/variables';
+
+@import './FrontPage';
+@import './Navigation';
+@import './Footer';
+
+@import './SingleRecipe';
+@import './ChoiceCarousel.scss';
+@import './AddRecipe.scss';
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poiret One', cursive;
+	font-size: 1.5vw;
+
+	h1 {
+		font-size: 1.8rem;
+		padding: 0.3rem 0;
+	}
+	h2 {
+		font-size: 1.5rem;
+		padding: 0.3rem 0;
+	}
+	h3 {
+		font-size: 1.1rem;
+		padding: 0.3rem 0;
+	}
+	h4 {
+		font-size: 0.9rem;
+		padding: 0.3rem 0;
+	}
+	p,
+	span,
+	li {
+		font-size: 0.7rem;
+		font-family: 'Montserrat', sans-serif;
+		padding: 0.3rem 0;
+	}
+}
+
+#main-container {
+	max-width: 100vw;
+
+}

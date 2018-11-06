@@ -1,0 +1,130 @@
+[
+  {
+    "title": "Redis",
+    "src": "salad.jpg",
+    "alt": "description",
+    "ingredients": [
+      {
+        "section": "For the sesame soy dressing",
+        "ingredients": [
+          {
+            "amount": "3",
+            "measure": "tbsp",
+            "item": "light soya sauce"
+          },
+          {
+            "amount": "3",
+            "measure": "tbsp",
+            "item": " black rice vinegar (recommended: Chinking) or balsamic vinegar"
+          },
+          {
+            "amount": "3",
+            "measure": "tbsp",
+            "item": "toasted sesame oil"
+          }
+        ]
+      },
+      {
+        "section": "For the noodle salad",
+        "ingredients": [
+          {
+            "amount": "200",
+            "measure": "g",
+            "item": " cooked whole wheat noodles or cooked brown rice, drizzled with groundnut oil"
+          },
+          {
+            "amount": "200",
+            "measure": "g",
+            "item": "red radish, washed and quartered"
+          },
+          {
+            "amount": "1 / 2",
+            "measure": "",
+            "item": "cucumber, halved lengthwise, seeded and diced"
+          }
+        ]
+      }
+    ],
+    "methods": [
+      {
+        "whatToPrepare": "Sauce",
+        "description": [
+          "For the dressing: combine the soy sauce, rice vinegar and sesame oil in a bowl.",
+          "Rice vinegar and sesame oil in a bowl."
+        ]
+      },
+      {
+        "whatToPrepare": "Meet",
+        "description": [
+          "For the salad: prepare the noodles, radishes and cucumber, then chill them in the refrigerator for at least one hour."
+        ]
+      }
+    ],
+    "cookingTime": "1h",
+    "cookingTemperature": "233C"
+  },
+  {
+    "title": "Redis",
+    "src": "salad.jpg",
+    "alt": "description",
+    "ingredients": [
+      {
+        "section": "For the sesame soy dressing",
+        "ingredients": [
+          {
+            "amount": "3",
+            "measure": "tbsp",
+            "item": "light soya sauce"
+          },
+          {
+            "amount": "3",
+            "measure": "tbsp",
+            "item": " black rice vinegar (recommended: Chinking) or balsamic vinegar"
+          },
+          {
+            "amount": "3",
+            "measure": "tbsp",
+            "item": "toasted sesame oil"
+          }
+        ]
+      },
+      {
+        "section": "For the noodle salad",
+        "ingredients": [
+          {
+            "amount": "200",
+            "measure": "g",
+            "item": " cooked whole wheat noodles or cooked brown rice, drizzled with groundnut oil"
+          },
+          {
+            "amount": "200",
+            "measure": "g",
+            "item": "red radish, washed and quartered"
+          },
+          {
+            "amount": "1 / 2",
+            "measure": "",
+            "item": "cucumber, halved lengthwise, seeded and diced"
+          }
+        ]
+      }
+    ],
+    "methods": [
+      {
+        "whatToPrepare": "Sauce",
+        "description": [
+          "For the dressing: combine the soy sauce, rice vinegar and sesame oil in a bowl.",
+          "Rice vinegar and sesame oil in a bowl."
+        ]
+      },
+      {
+        "whatToPrepare": "Meet",
+        "description": [
+          "For the salad: prepare the noodles, radishes and cucumber, then chill them in the refrigerator for at least one hour."
+        ]
+      }
+    ],
+    "cookingTime": "1h",
+    "cookingTemperature": "233C"
+  }
+]
