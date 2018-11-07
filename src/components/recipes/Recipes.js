@@ -1,6 +1,6 @@
 import React from "react";
 import MainPage from "../mainPage/MainPage";
-import salads from "../../pictures/salads/salad1.jpg";
+import salads from "../../pictures/salads/salad1-min.jpg";
 import ChoiceCarousel from "./ChoiceCarousel";
 
 const Recipes = () => {

@@ -2,8 +2,8 @@
 const inputFields = [
     {
       "title": "Title",
-      "src": "salad.jpg",
-      "alt": "Salads",
+      "src": "Upload image",
+      "alt": "Add description for image",
       "ingredients": [
         {
           "section": "Ingredients for...",

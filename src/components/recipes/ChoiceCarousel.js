@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import breakfast from "../../pictures/salads/breakfast.jpg";
+import breakfast from "../../pictures/salads/breakfast-min.jpg";
 // import SingleRecipe from './SingleRecipe';
 
 const ChoiceCarousel = () => {

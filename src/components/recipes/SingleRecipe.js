@@ -3,7 +3,7 @@ import React from "react";
 import Navigation from "../mainPage/Navigation";
 
 import salads from "../../mockup/salads/index.json";
-import Redish from "../../pictures/salads/salad.jpg";
+import Redish from "../../pictures/salads/salad-min.jpg";
 
 const FrontPageStyle = {
   backgroundImage: "url(" + Redish + ")",
