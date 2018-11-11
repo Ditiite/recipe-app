@@ -16,7 +16,7 @@ const inputFields = [
           ]
         }
       ],
-      "methods": [
+      "preparation": [
         {
           "whatToPrepare": "Preparation for ...",
           "description": "Description"

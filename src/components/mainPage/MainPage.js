@@ -27,11 +27,11 @@ const MainPage = ({ header, transparentHeader, children, img }: Props) => {
     >
       <Navigation />
       <h1>{header}</h1>
-      {children}
       <div className="main-page__half-white">
         <strong style={strongImage}>{transparentHeader}</strong>
       </div>
       <div className="main-page__img-container--sm" style={FrontPageStyle}>
+        {children}
         <Footer />
       </div>
     </section>

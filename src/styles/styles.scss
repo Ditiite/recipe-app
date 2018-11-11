@@ -1,50 +1,68 @@
-@import './mixins/mixins';
-@import './variables/variables';
+@import "./mixins/mixins";
+@import "./variables/variables";
 
-@import './FrontPage';
-@import './Navigation';
-@import './Footer';
+@import "./FrontPage";
+@import "./Navigation";
+@import "./Footer";
 
-@import './SingleRecipe';
-@import './ChoiceCarousel.scss';
-@import './AddRecipe.scss';
+@import "./SingleRecipe";
+@import "./ChoiceCarousel.scss";
+@import "./AddRecipe.scss";
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: 'Poiret One', cursive;
-	font-size: 1.5vw;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poiret One", cursive;
+  font-size: 1.5vw;
 
-	a {
-		text-decoration: none;
-	}
-	h1 {
-		font-size: 1.8rem;
-		padding: 0.3rem 0;
-	}
-	h2 {
-		font-size: 1.5rem;
-		padding: 0.3rem 0;
-	}
-	h3 {
-		font-size: 1.1rem;
-		padding: 0.3rem 0;
-	}
-	h4 {
-		font-size: 0.9rem;
-		padding: 0.3rem 0;
-	}
-	p,
-	span,
-	li {
-		font-size: 0.7rem;
-		font-family: 'Montserrat', sans-serif;
-		padding: 0.3rem 0;
-	}
+  a {
+    text-decoration: none;
+  }
+  h1 {
+    font-size: 1.8rem;
+    padding: 0.3rem 0;
+  }
+  h2 {
+    font-size: 1.5rem;
+    padding: 0.3rem 0;
+  }
+  h3 {
+    font-size: 1.1rem;
+    padding: 0.3rem 0;
+  }
+  h4 {
+    font-size: 0.9rem;
+    padding: 0.3rem 0;
+  }
+  p,
+  span,
+  li {
+    font-size: 0.7rem;
+    font-family: "Montserrat", sans-serif;
+    padding: 0.3rem 0;
+  }
 }
 
 #main-container {
-	max-width: 100vw;
+  max-width: 100vw;
+}
+// this styles are just temporarily
+form {
+  background-color: white;
+  height: 100%;
+  
+  label,
+  button {
+    font-size: 2rem;
+  }
+  input {
+	height: 50px;
+  font-size: 2rem;
+  background-color: transparent;
 
+    &::placeholder {
+      font-size: 2rem;
+    }
+  }
 }
