@@ -5,6 +5,7 @@ type Props = {
     label: string,
     type: string,
     onClick: () => mixed,
+    style?: {}
 }
 
 const styles = {

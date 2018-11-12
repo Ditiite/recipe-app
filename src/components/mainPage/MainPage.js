@@ -23,8 +23,7 @@ const MainPage = ({ header, transparentHeader, children, img }: Props) => {
   return (
     <section
       className="main-page main-page__img-container"
-      style={FrontPageStyle}
-    >
+      style={FrontPageStyle}>
       <Navigation />
       <h1>{header}</h1>
       <div className="main-page__half-white">

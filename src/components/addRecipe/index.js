@@ -1,15 +1,24 @@
 // @flow
 import React from "react";
-
+import Navigation from '../mainPage/Navigation'
 import MainPage from "../mainPage/MainPage";
-import spice from "../../pictures/spices/smallSpoons.jpg";
+import spice from "../../pictures/spices/love.jpg";
 import RecipeForm from './RecipeForm';
 
 const AddRecipe = () => {
-  return(
-    <MainPage img={spice} >
-      <RecipeForm />
-    </MainPage>
+  const FrontPageStyle = {
+    backgroundImage: "url(" + spice + ")"
+  };
+  
+  return (
+    <section
+      className="main-page main-page__img-container"
+      style={FrontPageStyle}>
+      <Navigation />
+      <div className="main-page__img-container--sm" style={FrontPageStyle}>
+        <RecipeForm/>
+      </div>
+    </section>
   );
 }
 

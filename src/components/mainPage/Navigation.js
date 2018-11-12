@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 const Navigation = () => {
   return (
     <nav className="nav">
-      <Link to="/" activeClassName="activeLink">
+      <Link to="/" className="activeLink">
         Home
       </Link>
-      <Link to="/recipes" activeClassName="activeLink">
+      <Link to="/recipes" className="activeLink">
         Recipes
       </Link>
-      <Link to="/addRecipe" activeClassName="activeLink">
+      <Link to="/addRecipe" className="activeLink">
         Add Recipe
       </Link>
     </nav>

@@ -2,15 +2,17 @@
 import React from "react";
 import { Field } from "redux-form";
 import renderField from "./renderField.js";
-import type { Node } from 'react';
+import type { Node } from "react";
 import type { FieldArrayProps } from "redux-form";
-import Button from '../button'
+import Button from "../button";
 
 type Props = FieldArrayProps & {
-	renderField: Node
+  renderField: Node,
+  Button: Node,
+  fieldIndex: number
 };
 
-const renderIngredients = ({ fields, meta: {error} }: Props) => {
+const renderIngredients = ({ fields, meta: { error } }: Props) => {
   const ingredients = [
     {
       field: "amount",
@@ -29,26 +31,29 @@ const renderIngredients = ({ fields, meta: {error} }: Props) => {
     }
   ];
 
-  const renderIngredientsFields = fieldIndex => ingredients.map(ingredients => (
-    <li key={ingredients.field}>
-      <Field
-        name={ingredients.field}
-        component={renderField}
-        label={ingredients.label} />
-      {/* {error && <li className="">{error}</li>} */}
-    </li>
-  ));
-  return (
-    <ul>
-      {fields.map((item, fieldIndex) => (
-        <div key={item} className="">
-            {renderIngredientsFields(fieldIndex)}
-        </div>
-      ))}
-      <Button
-        onClick={() => fields.push()} 
-        label="Add ingredient"
+  const renderIngredientsFields = () =>
+    ingredients.map(ingredients => (
+      <li key={ingredients.field}>
+        <Field
+          name={ingredients.field}
+          component={renderField}
+          label={ingredients.label}
         />
+        {/* {error && <li className="">{error}</li>} */}
+      </li>
+    ));
+  return (
+    <ul className="form-ingredients">
+        {fields.map((item: string) => (
+          <React.Fragment key={item}>
+            {renderIngredientsFields()}
+          </React.Fragment>
+        ))}
+      <Button
+        type="button"
+        label="Add ingredient"
+        onClick={() => fields.push()}
+      />
       {/* {error && <li className="">{error}</li>} */}
     </ul>
   );
