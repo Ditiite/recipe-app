@@ -2,11 +2,20 @@
 import React from 'react';
 import { FieldArray, reduxForm } from "redux-form";
 import renderIngredients from './Ingredients';
+import Button from '../button';
+import type { FormProps } from "redux-form/lib/types";
 
-const RecipeForm = () => {
+type Props = FormProps;
+
+const RecipeForm = (props: Props) => {
+    const { handleSubmit } = props;
     return(
-        <form>
+        <form onSubmit={handleSubmit}>
             <FieldArray name="ingredients" component={renderIngredients}/>
+            <Button
+                label="Save"
+                onClick={handleSubmit}
+                type="submit" />
         </form>
     ) 
 }

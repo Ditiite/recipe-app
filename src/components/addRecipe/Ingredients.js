@@ -1,9 +1,10 @@
 // @flow
 import React from "react";
-import { Field, FieldArray } from "redux-form";
+import { Field } from "redux-form";
 import renderField from "./renderField.js";
 import type { Node } from 'react';
 import type { FieldArrayProps } from "redux-form";
+import Button from '../button'
 
 type Props = FieldArrayProps & {
 	renderField: Node
@@ -12,38 +13,43 @@ type Props = FieldArrayProps & {
 const renderIngredients = ({ fields, meta: {error} }: Props) => {
   const ingredients = [
     {
+      field: "amount",
       name: "Amount",
       label: "amount"
     },
     {
+      field: "measure",
       name: "Measure",
       label: "measure"
     },
     {
+      field: "ingredient",
       name: "Ingredient",
-      label: "ingredients"
+      label: "ingredient"
     }
   ];
 
+  const renderIngredientsFields = fieldIndex => ingredients.map(ingredients => (
+    <li key={ingredients.field}>
+      <Field
+        name={ingredients.field}
+        component={renderField}
+        label={ingredients.label} />
+      {/* {error && <li className="">{error}</li>} */}
+    </li>
+  ));
   return (
     <ul>
-			<li>
-				<button type="button" onClick={() => fields.push()}>
-					Add Ingredient
-				</button>
-			</li>
-			{ingredients.map(item => {
-				return (
-					<li>
-						<Field
-							name={item.name}
-							label={item.label}
-							type="text"
-							component={renderField}
-						/>
-					</li>
-				);
-			})}
+      {fields.map((item, fieldIndex) => (
+        <div key={item} className="">
+            {renderIngredientsFields(fieldIndex)}
+        </div>
+      ))}
+      <Button
+        onClick={() => fields.push()} 
+        label="Add ingredient"
+        />
+      {/* {error && <li className="">{error}</li>} */}
     </ul>
   );
 };
