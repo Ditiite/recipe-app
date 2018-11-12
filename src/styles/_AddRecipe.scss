@@ -1,79 +1,77 @@
-.add-recipe-form {
-  @include position(absolute, 0, 0, 0, 0);
-  z-index: 3;
-  color: b;
+.form-section {
+  background-color: white;
+  opacity: 0.9;
+  height: 100%;
+  overflow: scroll;
 }
 
 .form {
+  padding: 1.5rem;
+  display: grid;
+  grid-template-areas:  
+    "title . . ."
+    "time temp . ."
+    "img img img ."
+    "items items description description"
+    "save . . . ";
+  height: fit-content;
+  grid-gap: 10px;
+  align-content: start;
   font-weight: 600;
-  color: black;
+  
+  & li {
+		list-style: none;
+  } 
+}
+	
+.title { grid-area: title; }
+.cooking-time { grid-area: time; }
+.cooking-temp { grid-area: temp; }
+.form-img { grid-area: img; }
+.save-btn { grid-area: save; }
+.form-description { grid-area: description; }
+.form-ingredients { 
+  grid-area: items;
   display: grid;
-  grid-template-areas:
-    "title time temp"
-    "upload-img upload-img upload-img"
-    "ingredients ingredients ingredients"
-    "btn . .";
-  grid-gap: 0.5rem;
-  overflow: scroll;
-  background-color: white;
-  opacity: 0.9;
-  padding: 3rem 1rem 0;
+  grid-template-areas: 
+    "amount measure ingredient"
+    "btn btn ."; 
+  height: fit-content;
+}
 
-  input {
-    color: black;
-    font-size: 20px;
-    height: 2rem;
-    // font-size: 1rem;
-    background-color: transparent;
-    // width: 100%
-    border: none;
-    border-bottom: 1px solid silver;
+#upload-img { font-size: 15px;}
 
-    &::placeholder {
-      color: transparent;
-      display: none;
-    }
+input,
+textarea {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid silver;
+  outline-color: rgb(243, 243, 243);
+}
+
+.input-wrap {
+  position: relative;
+  height: 50px;
+}
+
+.floating-label {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  pointer-events: none;
+  transition:  0.2s ease-in-out;
+}
+
+.input-text,
+textarea {
+  &:focus ~ label,
+  &:not([value=""]) ~ label {
+    top: -12px;
+    font-size: 13px;
   }
 
-  label {
-    font-size: 15px;
-  }
-
-  li {
-    list-style-type: none;
+  &:focus {
+    border-bottom: 2px solid rgb(61, 22, 61);
   }
 }
 
-.title {
-  grid-area: title;
-}
-
-.cooking-time {
-  grid-area: time;
-}
-
-.cooking-temp {
-  grid-area: temp;
-}
-
-.form-img {
-  grid-area: upload-img;
-  display: flex;
-}
-.form-upload-img {
-  width: 20rem;
-}
-.alt {
-  width: 50%;
-}
-
-.save-btn {
-  grid-area: btn;
-}
-
-.form-ingredients {
-  width: 100%;
-  grid-area: ingredients;
-  display: grid;
-  grid-template-columns: 50px 100px 250px;
-}
