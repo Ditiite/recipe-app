@@ -10,25 +10,34 @@ import SingleFields from "./SingleFields";
 import ImageComponent from "./ImageComponent";
 
 type Props = FormProps & {
-	SingleFields: Node
+  SingleFields: Node
 };
 
 const RecipeForm = (props: Props) => {
-	const { handleSubmit } = props;
-	return (
-		<section className="form-section">
-			<form className="form" onSubmit={handleSubmit}>
-				<SingleFields />
-				<ImageComponent />
-				<FieldArray name="ingredients" component={renderIngredients} />
-				<FieldArray name="preparation" component={renderDescription} />
-				<Button className="save-btn" label="Save" onClick={handleSubmit} type="submit" />
-			</form>
-		</section>
-	);
+  const { handleSubmit } = props;
+  return (
+    <section className="form-section">
+      <form className="form" onSubmit={handleSubmit}>
+        <SingleFields />
+        <ImageComponent />
+				<section className="from-grid-s">
+					<h3 className="ingredient-title">Ingredients</h3>
+					<FieldArray name="ingredients" component={renderIngredients} />
+					<h3 className="description-title">Description</h3>
+					<FieldArray name="preparation" component={renderDescription} />
+				</section>
+        <Button
+          className="save-btn"
+          label="Save"
+          onClick={handleSubmit}
+          type="submit"
+        />
+      </form>
+    </section>
+  );
 };
 
 export default reduxForm({
-	form: "fieldArrays" // a unique identifier for this form
-	// validate
+  form: "fieldArrays" // a unique identifier for this form
+  // validate
 })(RecipeForm);

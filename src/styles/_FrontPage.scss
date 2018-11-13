@@ -31,13 +31,16 @@
     -webkit-background-clip: text;
     // font-family: 'Montez', cursive;
     padding: 0.3rem 0;
-	background-position: top 50vh;
-	// background-position-y: top;
-	background-size: cover;
+    background-position: top 50vh;
+    // background-position-y: top;
+    background-size: cover;
   }
 }
 
 .main-page {
+  strong {
+    font-size: 10vw;
+  }
   h1 {
     @include position(
       absolute,
@@ -46,7 +49,7 @@
       null,
       null
     );
-    font-size: 4rem;
+    // font-size: 4rem;
     z-index: 2;
     color: #fff;
     // font-family: 'Montez', cursive;

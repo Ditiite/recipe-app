@@ -1,5 +1,5 @@
 // @flow
-import React, { Fragment } from "react";
+import React from "react";
 import { Field } from "redux-form";
 import renderField from "./renderField.js";
 import type { Node } from "react";
@@ -33,7 +33,7 @@ const renderSingleFields = ({ fields }: Props) => {
   ];
 
   return (
-    <Fragment>
+    <section className="single-section">
       {independentFields.map(singleField => (
         <div key={singleField.field} className={singleField.className}>
           <Field
@@ -43,7 +43,7 @@ const renderSingleFields = ({ fields }: Props) => {
           />
         </div>
       ))}
-    </Fragment>
+    </section>
   );
 };
 

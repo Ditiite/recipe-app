@@ -1,30 +1,22 @@
 // @flow
-import React from 'react';
+import React from "react";
 
 type Props = {
-    label: string,
-    type: string,
-    onClick: () => mixed,
-    style?: {},
-    className: string
-}
+  label: string,
+  type: string,
+  onClick: () => mixed,
+  style?: {},
+  className: string
+};
 
-const styles = {
-    color: "gray",
-    padding: "0 10px",
-    verticalAlign: "middle",
-    fontSize: "20px"
-}
-
-const Button = ({ label, type, onClick, className}: Props) => (
-    <button
-        style={styles}
-        label={label}
-        type={type}
-        className={className}
-        onClick={onClick}>
-        {label}
-    </button>
+const Button = ({ label, type, onClick, className }: Props) => (
+  <button
+    label={label}
+    type={type}
+    onClick={onClick}
+    className={`Button ${className}`}>
+    {label}
+  </button>
 );
 
 export default Button;

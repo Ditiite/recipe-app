@@ -44,12 +44,11 @@ const renderIngredients = ({ fields, meta: { error } }: Props) => {
     ));
   return (
     <ul className="form-ingredients">
-        {fields.map((item: string) => (
-          <React.Fragment key={item}>
-            {renderIngredientsFields()}
-          </React.Fragment>
-        ))}
+      {fields.map((item: string) => (
+        <React.Fragment key={item}>{renderIngredientsFields()}</React.Fragment>
+      ))}
       <Button
+        className="add-btn"
         type="button"
         label="Add ingredient"
         onClick={() => fields.push()}

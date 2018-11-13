@@ -1,45 +1,114 @@
 .form-section {
-  background-color: white;
-  opacity: 0.9;
+  background-color: rgba(249, 244, 244, 1);
   height: 100%;
   overflow: scroll;
+  padding: 40px 20px;
+  margin: 0 auto;
+}
+.single-section {
+  display: grid;
+  grid-template-areas:
+    "title title title"
+    "time temp .";
+
+  & .title {
+    grid-area: title;
+    justify-self: center;
+  }
 }
 
 .form {
-  padding: 1.5rem;
-  display: grid;
-  grid-template-areas:  
-    "title . . ."
-    "time temp . ."
-    "img img img ."
-    "items items description description"
-    "save . . . ";
-  height: fit-content;
-  grid-gap: 10px;
-  align-content: start;
+  max-width: 900px;
+  margin: 0 auto;
   font-weight: 600;
-  
+
+  label {
+    font-size: 18px;
+  }
+
   & li {
-		list-style: none;
-  } 
-}
-	
-.title { grid-area: title; }
-.cooking-time { grid-area: time; }
-.cooking-temp { grid-area: temp; }
-.form-img { grid-area: img; }
-.save-btn { grid-area: save; }
-.form-description { grid-area: description; }
-.form-ingredients { 
-  grid-area: items;
-  display: grid;
-  grid-template-areas: 
-    "amount measure ingredient"
-    "btn btn ."; 
-  height: fit-content;
+    list-style: none;
+  }
 }
 
-#upload-img { font-size: 15px;}
+.from-grid-s {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "title1 title2"
+    "ingredients description";
+
+  .ingredient-title {
+    grid-area: title1;
+  }
+  .description-title {
+    grid-area: title2;
+  }
+}
+
+.title {
+  input {
+    min-width: 250px;
+  }
+}
+
+.cooking-time {
+  & input {
+    width: 120px;
+  }
+}
+
+.cooking-temp {
+  & input {
+    width: 200px;
+  }
+}
+
+.form-img {
+  display: flex;
+
+  & .form-upload-img {
+    width: 215px;
+    border: none;
+  }
+  & .input-text {
+    width: 320px;
+  }
+  & .input-wrap {
+    width: 100%;
+  }
+}
+/* ======== DESCRIPTION SECTION ======= */
+
+.form-ingredients {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 80px 80px minmax(100px, 250px);
+  height: fit-content;
+  grid-gap: 10px;
+  margin: 0;
+
+  .input-wrap {
+    width: 100px;
+    margin: 0;
+    height: 20px;
+  }
+  input {
+    width: 70px;
+  }
+  & .measure input {
+    &:focus,
+    &:not([value=""]) {
+      width: 50px;
+      text-align: center;
+    }
+  }
+}
+
+#upload-img {
+  font-size: 15px;
+  height: 25px;
+}
 
 input,
 textarea {
@@ -49,24 +118,43 @@ textarea {
   outline-color: rgb(243, 243, 243);
 }
 
+input {
+  width: 100px;
+}
+
+textarea {
+  display: inline-block;
+  border: solid 1px #000;
+  width: 100%;
+  resize: none;
+  min-height: 100px;
+}
+
+.description-textarea {
+  min-height: 100px;
+  margin: 10px 0;
+}
+
 .input-wrap {
   position: relative;
   height: 50px;
+  margin-right: 10px;
 }
 
+// ==== LABELS ON FOCUS ====
 .floating-label {
   position: absolute;
   top: 3px;
   left: 0;
   pointer-events: none;
-  transition:  0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 .input-text,
 textarea {
   &:focus ~ label,
   &:not([value=""]) ~ label {
-    top: -12px;
+    top: -20px;
     font-size: 13px;
   }
 
@@ -74,4 +162,3 @@ textarea {
     border-bottom: 2px solid rgb(61, 22, 61);
   }
 }
-
