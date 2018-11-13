@@ -34,27 +34,28 @@ const renderIngredients = ({ fields, meta: { error } }: Props) => {
     }
   ];
 
-  const renderIngredientsFields = () =>
-    ingredients.map(ingredients => (
-      <li key={ingredients.field}>
-        <Field
-          name={ingredients.field}
-          component={renderField}
-          label={ingredients.label}
-        />
-        {/* {error && <li className="">{error}</li>} */}
-      </li>
-    ));
+  const renderIngredientsFields = (item) =>
+      ingredients.map(ingredient => (
+        <li key={ingredient.field}>
+          <Field
+            name={`${item}.${ingredient.field}`}
+            component={renderField}
+            label={ingredient.label}
+          />
+          {/* {error && <li className="">{error}</li>} */}
+        </li>
+      ))
+
   return (
     <ul className="form-ingredients">
-      {fields.map((item: string) => (
-        <React.Fragment key={item}>{renderIngredientsFields()}</React.Fragment>
+      {fields.map((item: any) => (
+        <React.Fragment key={item}>{renderIngredientsFields(item)}</React.Fragment>
       ))}
       <Button
         className="add-btn"
         type="button"
         label="Add ingredient"
-        onClick={() => fields.push()}
+        onClick={() => fields.push({})}
       />
       {/* {error && <li className="">{error}</li>} */}
     </ul>

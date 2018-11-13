@@ -27,6 +27,7 @@ const SingleRecipe = () => {
               <h2>{salad.title}</h2>
               <img
                 className="single-recipe__img"
+
                 src={require(`../../pictures/salads/${salad.src}`)}
                 alt={salad.alt}/>
               <p>

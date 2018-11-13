@@ -1,7 +1,7 @@
 // @flow
 import React from "react";
 import Navigation from '../mainPage/Navigation'
-import spice from "../../pictures/spices/love.jpg";
+import spice from "../../pictures/spices/love2.jpg";
 import RecipeForm from './RecipeForm';
 
 const AddRecipe = () => {

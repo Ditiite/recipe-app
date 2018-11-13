@@ -3,7 +3,12 @@
   vertical-align: middle;
   font-size: 20px;
   width: auto;
-  background: silver;
+  background: transparent;
+  border: 1px solid $border-color;
+  color: $border-input;
+  font-weight: 400;
+  border-radius: 50px;
+  cursor: pointer;
 }
 
 .add-btn {

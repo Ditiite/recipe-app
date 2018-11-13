@@ -29,13 +29,13 @@ const renderDescription = ({ fields, meta: { error } }: Props) => {
     }
   ];
 
-  const renderDescriptionFields = () =>
+  const renderDescriptionFields = (item) =>
     description.map(description => (
       <div className={description.className}>
         <li key={description.field} className="input-wrap">
           <Field
             className="input-text"
-            name={description.field}
+            name={`${item}.${description.field}`}
             component={description.component}
             label={description.label}
           />
@@ -49,7 +49,7 @@ const renderDescription = ({ fields, meta: { error } }: Props) => {
       <div className="form-description-wrap">
         {fields.map((item: string) => (
           <React.Fragment key={item}>
-            {renderDescriptionFields()}
+            {renderDescriptionFields(item)}
           </React.Fragment>
         ))}
         {/* {error && <li className="">{error}</li>} */}

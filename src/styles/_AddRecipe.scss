@@ -1,13 +1,15 @@
 .form-section {
-  background-color: rgba(249, 244, 244, 1);
+  background-color: $bg-color;
   height: 100%;
-  overflow: scroll;
+  // overflow: scroll;
   overflow-x: hidden;
   padding: 40px 20px;
   position: relative;
 }
 
 .form {
+  letter-spacing: 1px;
+  color: $border-input;
   font-weight: 600;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -27,11 +29,13 @@
   }
 
   & .border-right {
-    border-right: 1px solid silver;
+    border-right: 1px solid $border-color;
   }
 
   & input {
     width: 100%;
+    color: $border-input;
+    margin: 20px 0;
   }
 
   & label {
@@ -56,7 +60,6 @@
   }
 }
 /* ======== DESCRIPTION SECTION ======= */
-
 .form-ingredients {
   display: grid;
   width: 100%;
@@ -69,7 +72,7 @@
   margin: 0;
 
   & .input-wrap {
-    width: 100px;
+    // width: 100px;
     margin: 0;
     height: 40px;
   }
@@ -90,10 +93,6 @@
     grid-area: span 2;
   }
 
-  input {
-    width: 70px;
-  }
-
   & .measure input {
     &:focus,
     &:not([value=""]) {
@@ -112,8 +111,8 @@ input,
 textarea {
   background-color: transparent;
   border: none;
-  border-bottom: 2px solid silver;
-  outline-color: rgb(243, 243, 243);
+  border-bottom: 1px solid $border-input;
+  color: $border-input;
 }
 
 input {
@@ -121,16 +120,24 @@ input {
 }
 
 textarea {
+  margin-bottom: 10px;
   display: inline-block;
-  border: solid 1px #000;
+  border: 1px solid $border-input;
   width: 100%;
   resize: none;
+  font-size: 15px;
+  padding: 3px;
   min-height: 100px;
 }
 
 .description-textarea {
   min-height: 100px;
   margin: 10px 0;
+
+  & .floating-label {
+    margin-left: 10px;
+    background-color: $bg-color; 
+  }
 }
 
 .input-wrap {
@@ -142,7 +149,7 @@ textarea {
 // ==== LABELS ON FOCUS ====
 .floating-label {
   position: absolute;
-  top: 3px;
+  top: 27px;
   left: 0;
   pointer-events: none;
   transition: 0.2s ease-in-out;
@@ -153,11 +160,11 @@ textarea {
 
   &:focus ~ label,
   &:not([value=""]) ~ label {
-    top: -20px;
+    top: -10px;
     font-size: 13px;
   }
 
   &:focus {
-    border-bottom: 2px solid rgb(61, 22, 61);
+    border-bottom: 2px solid $border-color;
   }
 }
