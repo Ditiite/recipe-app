@@ -12,8 +12,7 @@ const ImageComponent = () => {
         name="alt"
         component={renderField}
         type="text"
-        label="Please add small description about image"
-      />
+        label="Please add small description about image"/>
     </div>
   );
 };

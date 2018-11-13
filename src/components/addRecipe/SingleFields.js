@@ -33,7 +33,7 @@ const renderSingleFields = ({ fields }: Props) => {
   ];
 
   return (
-    <section className="single-section">
+    <>
       {independentFields.map(singleField => (
         <div key={singleField.field} className={singleField.className}>
           <Field
@@ -43,7 +43,7 @@ const renderSingleFields = ({ fields }: Props) => {
           />
         </div>
       ))}
-    </section>
+    </>
   );
 };
 

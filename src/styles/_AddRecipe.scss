@@ -2,80 +2,53 @@
   background-color: rgba(249, 244, 244, 1);
   height: 100%;
   overflow: scroll;
+  overflow-x: hidden;
   padding: 40px 20px;
-  margin: 0 auto;
-}
-.single-section {
-  display: grid;
-  grid-template-areas:
-    "title title title"
-    "time temp .";
-
-  & .title {
-    grid-area: title;
-    justify-self: center;
-  }
+  position: relative;
 }
 
 .form {
-  max-width: 900px;
-  margin: 0 auto;
   font-weight: 600;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "single ingredients description";
+  grid-auto-flow: column;
+  grid-gap: 10px;
+  justify-content: center;
+  height: 100%;
 
-  label {
+  & .save-btn {
+    grid-area: btn;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+  }
+
+  & .border-right {
+    border-right: 1px solid silver;
+  }
+
+  & input {
+    width: 100%;
+  }
+
+  & label {
     font-size: 18px;
   }
 
   & li {
     list-style: none;
   }
-}
 
-.from-grid-s {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas:
-    "title1 title2"
-    "ingredients description";
-
-  .ingredient-title {
-    grid-area: title1;
-  }
-  .description-title {
-    grid-area: title2;
-  }
-}
-
-.title {
-  input {
-    min-width: 250px;
-  }
-}
-
-.cooking-time {
-  & input {
-    width: 120px;
-  }
-}
-
-.cooking-temp {
-  & input {
-    width: 200px;
-  }
 }
 
 .form-img {
   display: flex;
+  flex-direction: column;
 
   & .form-upload-img {
-    width: 215px;
     border: none;
-  }
-  & .input-text {
-    width: 320px;
-  }
-  & .input-wrap {
-    width: 100%;
   }
 }
 /* ======== DESCRIPTION SECTION ======= */
@@ -83,19 +56,40 @@
 .form-ingredients {
   display: grid;
   width: 100%;
-  grid-template-columns: 80px 80px minmax(100px, 250px);
+  grid-template-columns: repeat(2, 1fr) 2fr;
+  grid-template-areas: 
+    "amount measure item"
+    "btn btn .";
   height: fit-content;
   grid-gap: 10px;
   margin: 0;
 
-  .input-wrap {
+  & .input-wrap {
     width: 100px;
     margin: 0;
     height: 20px;
   }
+
+  & .amount {
+    grid-area: amount;
+  }
+
+  & .measure {
+    grid-area: measure;
+  }
+
+  & .ingredient {
+    grid-area: item;
+  }
+
+  & .add-btn {
+    grid-area: btn;
+  }
+
   input {
     width: 70px;
   }
+
   & .measure input {
     &:focus,
     &:not([value=""]) {
@@ -152,6 +146,7 @@ textarea {
 
 .input-text,
 textarea {
+
   &:focus ~ label,
   &:not([value=""]) ~ label {
     top: -20px;

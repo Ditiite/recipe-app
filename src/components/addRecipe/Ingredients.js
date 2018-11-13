@@ -15,16 +15,19 @@ type Props = FieldArrayProps & {
 const renderIngredients = ({ fields, meta: { error } }: Props) => {
   const ingredients = [
     {
+      className: "amount",
       field: "amount",
       name: "Amount",
       label: "amount"
     },
     {
+      className: "measure",
       field: "measure",
       name: "Measure",
       label: "measure"
     },
     {
+      className: "ingredient",
       field: "ingredient",
       name: "Ingredient",
       label: "ingredient"
