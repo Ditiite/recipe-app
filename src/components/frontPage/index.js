@@ -1,6 +1,6 @@
 import React from "react";
 import MainPage from "../mainPage/MainPage";
-import macron from "../../pictures/cookies/macrons-min.jpg";
+import macron from "../../pictures/cookies/m.jpg";
 
 const FrontPage = () => {
   return (

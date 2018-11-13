@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <small>Created by Dita</small>
-      <a target="__blank" href="https://menubar.io/sass-react-webpack">
+      <a target="__blank" href="https://www.linkedin.com/in/dita-rahmane/">
         <i className="fab fa-linkedin-in" />
       </a>
     </footer>

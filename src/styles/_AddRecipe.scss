@@ -17,6 +17,7 @@
   grid-gap: 10px;
   justify-content: center;
   height: 100%;
+  line-height: 20px;
 
   & .save-btn {
     grid-area: btn;
@@ -41,6 +42,8 @@
     list-style: none;
   }
 
+  & h3 { padding-bottom: 22px; }
+
 }
 
 .form-img {
@@ -49,6 +52,7 @@
 
   & .form-upload-img {
     border: none;
+    margin-bottom: 20px;
   }
 }
 /* ======== DESCRIPTION SECTION ======= */
@@ -67,7 +71,7 @@
   & .input-wrap {
     width: 100px;
     margin: 0;
-    height: 20px;
+    height: 40px;
   }
 
   & .amount {
@@ -83,7 +87,7 @@
   }
 
   & .add-btn {
-    grid-area: btn;
+    grid-area: span 2;
   }
 
   input {

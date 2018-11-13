@@ -19,15 +19,16 @@ const RecipeForm = (props: Props) => {
     <section className="form-section">
       <form className="form" onSubmit={handleSubmit}>
         <div className="border-right">
+          <h3>Recipe:</h3>
           <SingleFields />
           <ImageComponent />
         </div>
         <div className="border-right">
-					<h3 className="ingredient-title">Ingredients</h3>
+					<h3 className="ingredient-title">Ingredients:</h3>
 					<FieldArray name="ingredients" component={renderIngredients} />
         </div>
         <div>
-					<h3 className="description-title">Description</h3>
+					<h3 className="description-title">Description:</h3>
 					<FieldArray name="preparation" component={renderDescription} />
 				</div>
         <Button
