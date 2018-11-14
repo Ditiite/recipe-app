@@ -91,6 +91,8 @@
 
   & .add-btn {
     grid-area: span 2;
+    margin-top: 10px;
+
   }
 
   & .measure input {
@@ -142,7 +144,7 @@ textarea {
 
 .input-wrap {
   position: relative;
-  height: 50px;
+  height: 55px;
   margin-right: 10px;
 }
 
@@ -160,7 +162,7 @@ textarea {
 
   &:focus ~ label,
   &:not([value=""]) ~ label {
-    top: -10px;
+    top: -5px;
     font-size: 13px;
   }
 
