@@ -11,49 +11,50 @@ type Props = FieldArrayProps & {
   fieldIndex: number
 };
 
-const renderDescription = ({ fields, meta: { error } }: Props) => {
+const renderDescription = ({ fields, meta: { touched, error } }: Props) => {
   const description = [
     {
-      className: "description-title",
+      className: "description-title input-wrap",
       field: "whatPrepare",
       name: "whatPrepare",
       label: "What to prepare..",
-      component: "input"
+      component: "input",
+      placeholder: ""
     },
     {
       className: "description-textarea",
       field: "description",
       name: "description",
-      label: "How to prepare..",
-      component: "textarea"
+      label: "",
+      component: "textarea",
+      placeholder: "How to prepare.."
     }
   ];
 
   const renderDescriptionFields = (item) =>
     description.map(description => (
-      <div className={description.className}>
-        <li key={description.field} className="input-wrap">
+      <div  key={Math.random() * 1000} className={description.className}>
+        <li key={description.field}>
           <Field
             className="input-text"
             name={`${item}.${description.field}`}
             component={description.component}
             label={description.label}
+            placeholder={description.placeholder}
           />
-          {/* {error && <li className="">{error}</li>} */}
+          {touched && ((error && <span>{error}</span>))}
           <label className="floating-label">{description.label}</label>
         </li>
       </div>
     ));
   return (
     <ul className="form-description">
-      <div className="form-description-wrap">
         {fields.map((item: string) => (
           <React.Fragment key={item}>
             {renderDescriptionFields(item)}
           </React.Fragment>
         ))}
-        {/* {error && <li className="">{error}</li>} */}
-      </div>
+      {touched && ((error && <span>{error}</span>))}
       <Button
         className="add-btn"
         type="button"

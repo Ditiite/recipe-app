@@ -12,7 +12,7 @@ type Props = FieldArrayProps & {
   fieldIndex: number
 };
 
-const renderIngredients = ({ fields, meta: { error } }: Props) => {
+const renderIngredients = ({ fields, meta: { touched, error, warning } }: Props) => {
   const ingredients = [
     {
       className: "amount",
@@ -36,13 +36,13 @@ const renderIngredients = ({ fields, meta: { error } }: Props) => {
 
   const renderIngredientsFields = (item) =>
       ingredients.map(ingredient => (
-        <li key={ingredient.field}>
+        <li key={Math.random() * 1000}>
           <Field
             name={`${item}.${ingredient.field}`}
             component={renderField}
             label={ingredient.label}
           />
-          {/* {error && <li className="">{error}</li>} */}
+          {touched && ((error && <span>{error}</span>))}
         </li>
       ))
 
@@ -57,7 +57,7 @@ const renderIngredients = ({ fields, meta: { error } }: Props) => {
         label="Add ingredient"
         onClick={() => fields.push({})}
       />
-      {/* {error && <li className="">{error}</li>} */}
+      {touched && ((error && <span>{error}</span>))}
     </ul>
   );
 };

@@ -15,10 +15,12 @@ type Props = FieldProps & {
 
 const renderField = ({ input, label, type, meta: { touched, error } }: Props) => (
     <div className="input-wrap">
-      <input {...input} type={type} className="input-text" autocomplete="off"/>
-        {touched && error && <span>
-        {/* {error} */}
-      </span>}
+      <input {...input} type={type} className="input-text" autoComplete="off"/>
+      {
+        touched && error && <span className="error">
+          {error}
+        </span>
+      }
       <label className="floating-label">{label}</label>
     </div>
   )

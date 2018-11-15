@@ -1,20 +1,19 @@
 .Button {
-  padding: 5px 10px;
+  padding: 0.3rem 0.5rem;
   vertical-align: middle;
-  font-size: 20px;
-  width: auto;
+  font-size: 0.7rem;
   background: transparent;
-  border: 1px solid $border-color;
+  border: 0.05rem solid $border-color;
   color: $border-input;
   font-weight: 400;
-  border-radius: 50px;
+  border-radius: 3rem;
   cursor: pointer;
 }
 
 .add-btn {
-  width: 160px;
+  width: 7rem;
 }
 
 .save-btn {
-  width: 151px;
+  width: 4rem;
 }

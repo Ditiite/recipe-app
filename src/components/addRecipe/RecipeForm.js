@@ -8,6 +8,7 @@ import type { Node } from "react";
 import type { FormProps } from "redux-form/lib/types";
 import SingleFields from "./SingleFields";
 import ImageComponent from "./ImageComponent";
+import validate from './validation';
 
 type Props = FormProps & {
   SingleFields: Node
@@ -15,20 +16,21 @@ type Props = FormProps & {
 
 const RecipeForm = (props: Props) => {
   const { handleSubmit } = props;
-  return (
+
+    return (
     <section className="form-section">
       <form className="form" onSubmit={handleSubmit}>
-        <div className="border-right">
+        <div className="border-right single">
           <h3>Recipe:</h3>
           <SingleFields />
           <ImageComponent />
         </div>
-        <div className="border-right">
+        <div className="border-right ingredient">
 					<h3 className="ingredient-title">Ingredients:</h3>
 					<FieldArray name="ingredients" component={renderIngredients} />
         </div>
         <div>
-					<h3 className="description-title">Description:</h3>
+					<h3 className="description-title preparation">Description:</h3>
 					<FieldArray name="preparation" component={renderDescription} />
 				</div>
         <Button
@@ -43,6 +45,8 @@ const RecipeForm = (props: Props) => {
 };
 
 export default reduxForm({
-  form: "fieldArrays" // a unique identifier for this form
-  // validate
+  form: "newRecipe", // a unique identifier for this form
+  destroyOnUnmount: false, // <------ preserve form data
+  forceUnregisterOnUnmount: true, // <------ unregister fields on unmount
+  validate
 })(RecipeForm);
