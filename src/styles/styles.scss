@@ -11,6 +11,9 @@
 
 @import "./Button.scss";
 
+@import "./small.scss";
+@import "./medium.scss";
+
 * {
   margin: 0;
   padding: 0;
@@ -18,6 +21,13 @@
   font-family: "Poiret One", cursive;
   font-size: 1.5vw;
   outline: none;
+
+  img,
+  embed,
+  object,
+  video {
+    max-width: 100%;
+  }
 
   a {
     text-decoration: none;

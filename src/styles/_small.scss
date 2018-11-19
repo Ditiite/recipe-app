@@ -1,0 +1,68 @@
+
+@media screen and (max-width: 700px) {
+  .form {
+    justify-content: center;
+    grid-template-columns: 1fr;
+    height: fit-content;
+    grid-gap: 0.2rem; 
+    grid-template-areas:
+      "single"
+      "ingredients" 
+      "description"
+      "btn";
+    grid-template-rows: auto;
+
+    & .border-right {
+      border-right: none;
+      padding-right: 0.5rem;
+    }
+
+    & .single {
+      grid-area: single;
+    }
+    & .preparation {
+      grid-area: description;
+    }
+    & .ingredient {
+      grid-area: ingredients;
+    }
+    & .btn {
+      grid-area: btn;
+    }
+  }  
+
+  .main-page__img-container--sm,
+  .single-recipe__img-container--sm {
+    @include position(absolute, 0rem, 0rem, 0rem, 0rem);
+  }
+
+  .main-page__half-white {
+		background-color: transparent;
+		
+		& strong {
+			-webkit-text-fill-color: $title-color;
+    	-webkit-background-clip: none;
+		}
+	}
+	
+	.nav {	
+		@include position(absolute, 10px, 30px, null, null);
+		flex-direction: column;
+		background-color: $bg-color-lighter;
+	}
+	
+	.nav-hamburger-icon {
+		@include position(absolute, 10px, 10px, null, null);
+		z-index: 3;
+		opacity: 1;
+		display: flex;
+		font-weight: 900;
+		color: $border-color;
+	}
+}
+
+@media screen and (min-width: 701px) {
+	.nav-hamburger-icon {
+		display: none;
+	}
+}

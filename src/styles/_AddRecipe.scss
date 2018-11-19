@@ -1,7 +1,6 @@
 .form-section {
   background-color: $bg-color;
   height: 100%;
-  // overflow: scroll;
   overflow-x: hidden;
   padding: 2rem 1rem;
   position: relative;
@@ -164,61 +163,3 @@ textarea {
   font-size: 0.5rem;
 }
 
-
-@media screen and (max-width: 840px) {
-  .form {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-areas:
-      "single ingredients"
-      "single description"
-      "btn .";
-    grid-template-rows: auto;
-  }
-  
-    & .single {
-      grid-area: single;
-    }
-    & .preparation {
-      grid-area: description;
-      border-right: $border-color;
-    }
-    & .ingredient {
-      grid-area: ingredients;
-    }
-    & .btn {
-      grid-area: btn;
-    }
-}
-
-@media screen and (max-width: 700px) {
-  .form {
-    justify-content: center;
-    grid-template-columns: 1fr;
-    height: fit-content;
-    grid-gap: 0.2rem; 
-    grid-template-areas:
-      "single"
-      "ingredients" 
-      "description"
-      "btn";
-    grid-template-rows: auto;
-
-    & .border-right {
-      border-right: none;
-      padding-right: 0.5rem;
-    }
-
-    & .single {
-      grid-area: single;
-    }
-    & .preparation {
-      grid-area: description;
-    }
-    & .ingredient {
-      grid-area: ingredients;
-    }
-    & .btn {
-      grid-area: btn;
-    }
-  }  
-}

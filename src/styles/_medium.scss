@@ -1,0 +1,24 @@
+@media screen and (max-width: 1025px) {
+  .form {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "single ingredients"
+      "single description"
+      "btn .";
+    grid-template-rows: auto;
+  }
+  
+    & .single {
+      grid-area: single;
+    }
+    & .preparation {
+      grid-area: description;
+      border-right: $border-color;
+    }
+    & .ingredient {
+      grid-area: ingredients;
+    }
+    & .btn {
+      grid-area: btn;
+    }
+}

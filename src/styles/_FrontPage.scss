@@ -18,7 +18,7 @@
 .main-page__half-white {
   @include position(absolute, 2rem, 2rem, 2rem, null);
   width: 30vw;
-  background-color: white;
+  background-color: $title-color;
   z-index: 2;
   opacity: 0.9;
 
@@ -29,10 +29,8 @@
     z-index: 2;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
-    // font-family: 'Montez', cursive;
     padding: 0.3rem 0;
     background-position: top 50vh;
-    // background-position-y: top;
     background-size: cover;
   }
 }
@@ -43,6 +41,9 @@
   }
   
   h1 {
+    z-index: 2;
+    color: #fff;
+
     @include position(
       absolute,
       calc(25vh + 2rem),
@@ -50,10 +51,5 @@
       null,
       null
     );
-    // font-size: 4rem;
-    z-index: 2;
-    color: #fff;
-    // font-family: 'Montez', cursive;
-    // letter-spacing: 0.2rem;
   }
 }
